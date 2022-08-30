@@ -4,10 +4,10 @@
 # 사용기술
     
 # 구조
-L run.py        : 엔트리포인트(설정)
-L static        : (고정)정적리소스 위치(css, js, image...)
-L templates     : (고정)html 위치
-L model           : 프로젝트에 필요한 리소스(임의로 생성)
-    L ml.pkl    : 사전(오프라인)학습된 모델
-    L *.npy     : 모델이 정상작동하는지 테스트용 더미 데이터 
-    L predict.py: 예측, 전처리 작업을 진행하는 모듈
+L run.py        : 엔트리포인트(설정)  <br>
+L static        : (고정)정적리소스 위치(css, js, image...)  <br>
+L templates     : (고정)html 위치 <br>
+L model           : 프로젝트에 필요한 리소스(임의로 생성) <br>
+　  L ml.pkl    : 사전(오프라인)학습된 모델 <br>
+　  L *.npy     : 모델이 정상작동하는지 테스트용 더미 데이터 <br>
+　  L predict.py: 예측, 전처리 작업을 진행하는 모듈 <br>

@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+
+            <textarea cols="40" rows="15" id="userInput"></textarea>
+            <br>
+            <button id="detectBtn">언어감지</button>
+            <br>
+            <p>결과:<span id="result"></span></p>
+
+        </fieldset>
+    </div>
+    <script>
+        $('#detectBtn').on('click', () => {
+            // 1. 사용자가 입력한 텍스트를 추출 => 특정후 추출
+            let src = $('#userInput').val()
+            console.log( src )
+            // 2. 해당 텍스트를 서버측으로 전송( 서버주소, 전송방식(post), 응답형태(json))
+            $.post({
+                url:'/predict',         
+                data:'key='+src,        
+                dataType:'json',  
+                success:(res)=>{           // 통신이 성공하면 결과를 res에 담아서 콜백함수를 호출한다.
+                    // 3. 결과를 화면에 표시하시오 ->  이 글은 한국어 입니다.
+                    console.log(res)
+                    $('#result').html(`이글은 ${res.value} 입니다.`)
+                },
+                error:(err)=>{
+                    console.log(err)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
